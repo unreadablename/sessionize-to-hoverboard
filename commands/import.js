@@ -14,6 +14,7 @@ const {
   getSpeakersFromSessions,
 } = require('../lib/sessionize');
 const {
+  importSessions,
   importSpeakers,
 } = require('../lib/hoverboard');
 
@@ -69,6 +70,8 @@ const preview = async (yes = false) => {
   const speakers = await getSpeakersFromSessions(sessions);
 
   const speakerIdMapping = await importSpeakers(speakers);
+
+  await importSessions(sessions, speakerIdMapping);
   // console.log(speakerIdMapping);
 };
 
