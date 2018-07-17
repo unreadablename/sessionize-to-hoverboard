@@ -4,7 +4,7 @@ const commander = require('commander');
 const pkg = require('./package.json');
 
 const initCommand = require('./commands/init');
-const previewCommand = require('./commands/preview');
+const importCommand = require('./commands/import');
 
 commander
   .version(pkg.version, '-v, --version')
@@ -13,10 +13,10 @@ commander
   .action(initCommand);
 
 commander
-  .command('preview')
-  .description('preview data from sessionize')
+  .command('import')
+  .description('import data from sessionize')
   .option('-y, --yes', 'yes for all questions')
-  .action(previewCommand);
+  .action(importCommand);
 
 commander.parse(process.argv);
 

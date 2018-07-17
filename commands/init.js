@@ -59,6 +59,13 @@ const initialQuestions = [
   },
   {
     type: 'input',
+    name: 'storageBucket',
+    message: 'storageBucket',
+    default: 'dfua-test.appspot.com',
+    // validate: validateSessionizeEndpoint,
+  },
+  {
+    type: 'input',
     name: 'sessionizeEndpoint',
     message: 'Sessionize API Endpoint',
     default: 'https://sessionize.com/api/v2/jl4ktls0/view/',
