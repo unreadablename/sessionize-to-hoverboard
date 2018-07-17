@@ -67,15 +67,12 @@ const preview = async (yes = false) => {
   }
 
   const speakers = await getSpeakersFromSessions(sessions);
-  // speakers.forEach(s => console.log(s.fullName));
-  // console.log(speakers);
 
   const speakerIdMapping = await importSpeakers(speakers);
-  console.log(speakerIdMapping);
+  // console.log(speakerIdMapping);
 };
 
 module.exports = (cmd) => {
-  // console.log(cmd.yes);
   preview(!!cmd.yes)
     .catch(err => console.error(err));
 
